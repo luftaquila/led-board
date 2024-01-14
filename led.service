@@ -1,0 +1,13 @@
+[Unit]
+Description=LED Panel Service
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/luftaquila/workspace/led-board
+ExecStart=/usr/bin/node index.mjs
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
